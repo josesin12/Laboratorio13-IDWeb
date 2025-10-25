@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <style>
+        .landing {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #004080, #0073e6);
+  color: white;
+  height: 300px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content button {
+  background: white;
+  color: #004080;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.hero-content button:hover { background: #ddd; }
+    </style>
+  <div class="landing">
+    <header><h1>Mi Landing Page</h1></header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Bienvenido a nuestra web</h2>
+        <button>Comenzar</button>
+      </div>
+    </section>
+
+    <main>
+      <p>Esta es una landing page básica usando Grid y Flexbox.</p>
+    </main>
+
+    <footer>© 2025 - José Kana</footer>
+  </div>
+</body>
+</html>
