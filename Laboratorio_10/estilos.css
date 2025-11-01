@@ -1,0 +1,277 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    background: #2a628f; 
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #1a496b;
+}
+
+main {
+    padding: 2rem;
+    flex-grow: 1; 
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2a628f;
+    font-size: 2.5rem;
+}
+section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; 
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #e9e9e9;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.caracteristicas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 0;
+    padding-top: 2rem;
+}
+
+.caracteristicas article {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.caracteristicas article h3 {
+    color: #2a628f;
+    margin-bottom: 0.5rem;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.servicio-card {
+    background: white;
+    padding: 1.5rem;
+    border-left: 5px solid #2a628f;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-card h3 {
+    color: #2a628f;
+    margin-bottom: 0.5rem;
+}
+
+.portafolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.proyecto-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #ccc;
+}
+
+.proyecto-info {
+    padding: 1rem;
+}
+
+.proyecto-info h3 {
+    color: #2a628f;
+}
+
+.equipo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.miembro-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+}
+
+.miembro-card .foto-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #555;
+}
+
+.miembro-card h3 {
+    color: #2a628f;
+    margin-bottom: 0.25rem;
+}
+
+.formulario-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario-contacto label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.formulario-contacto input[type="text"],
+.formulario-contacto input[type="email"],
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario-contacto textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.formulario-contacto button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario-contacto button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li a {
+        padding: 0.75rem 0;
+        text-align: center;
+    }
+
+    .hero, main {
+        padding: 1rem;
+    }
+
+    .caracteristicas article,
+    .miembro-card {
+        min-width: 100%;
+    }
+}
