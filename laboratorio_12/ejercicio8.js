@@ -3,4 +3,4 @@ const convertirAMayusculas = function (texto) {
 };
 
 
-console.log(convertirAMayusculas("hola mundo"));
+console.log(convertirAMayusculas("holaaaaa"));

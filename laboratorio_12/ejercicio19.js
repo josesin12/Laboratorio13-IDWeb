@@ -6,7 +6,7 @@ function mostrarDatos(nombre, edad, hobbiesArray) {
   if (Array.isArray(hobbiesArray) && hobbiesArray.length > 0) {
     console.log(`Hobbies: ${hobbiesArray.join(', ')}`);
   } else {
-    console.log("Hobbies: Ninguno especificado.");
+    console.log("Hobbies: Ninguno especificado");
   }
 }
 

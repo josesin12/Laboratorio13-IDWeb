@@ -3,7 +3,7 @@ function operacionesMatematicas() {
   const restar = (a, b) => a - b;
   const multiplicar = (a, b) => a * b;
   const dividir = (a, b) => {
-    if (b === 0) return "Error: División por cero";
+    if (b === 0) return "Error, División por cero";
     return a / b;
   };
 
