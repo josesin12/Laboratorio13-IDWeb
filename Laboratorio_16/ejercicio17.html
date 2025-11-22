@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 17:</title>
+</head>
+<body>
+    <h3>Datos de Usuario Almacenados (Recarga la página para verificar)</h3>
+    <p>Nombre: <span id="nombreUsuario"></span></p>
+    <p>Correo: <span id="correoUsuario"></span></p>
+    <p>Rol: <span id="rolUsuario"></span></p>
+    <button id="btnLimpiar">Limpiar localStorage</button>
+
+    <script>
+        const usuario = {
+            nombre: "Sofia",
+            correo: "sofia@email.com",
+            rol: "Administrador"
+        };
+        const STORAGE_KEY = "datosUsuario";
+
+        if (!localStorage.getItem(STORAGE_KEY)) {
+            const jsonUsuario = JSON.stringify(usuario);
+            localStorage.setItem(STORAGE_KEY, jsonUsuario);
+            console.log("Datos iniciales guardados en localStorage.");
+        }
+
+        const datosJSON = localStorage.getItem(STORAGE_KEY);
+        if (datosJSON) {
+            const datosRecuperados = JSON.parse(datosJSON);
+            document.getElementById("nombreUsuario").textContent = datosRecuperados.nombre;
+            document.getElementById("correoUsuario").textContent = datosRecuperados.correo;
+            document.getElementById("rolUsuario").textContent = datosRecuperados.rol;
+        } else {
+            document.getElementById("nombreUsuario").textContent = "No hay datos guardados.";
+        }
+
+        document.getElementById("btnLimpiar").addEventListener("click", () => {
+            localStorage.removeItem(STORAGE_KEY);
+            alert("Datos de usuario eliminados. Recargue la página.");
+            location.reload();
+        });
+    </script>
+</body>
+</html>

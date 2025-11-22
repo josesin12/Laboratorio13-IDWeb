@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 21:</title>
+    <style>
+        .completada { color: green; font-weight: bold; }
+        .pendiente { color: red; }
+    </style>
+</head>
+<body>
+    <h3>Lista de Tareas (Estado Dinámico)</h3>
+    <ul id="listaTareas"></ul>
+
+    <script>
+        const jsonTareas = `[
+            {"titulo": "Comprar víveres", "completada": false},
+            {"titulo": "Terminar Lab 16", "completada": true},
+            {"titulo": "Enviar correo", "completada": false}
+        ]`;
+        const listaUL = document.getElementById('listaTareas');
+
+        const tareas = JSON.parse(jsonTareas);
+
+        tareas.forEach(tarea => {
+            const li = document.createElement('li');
+            let estado = tarea.completada ? "Completada" : "Pendiente";
+            
+            const claseCSS = tarea.completada ? 'completada' : 'pendiente';
+            li.textContent = `${tarea.titulo} (${estado})`;
+            li.classList.add(claseCSS);
+            listaUL.appendChild(li);
+        });
+    </script>
+</body>
+</html>

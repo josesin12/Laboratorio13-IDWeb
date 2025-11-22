@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 20:</title>
+</head>
+<body>
+    <h3>Capturar y Generar JSON</h3>
+    <input type="text" id="inputNombre" placeholder="Escribe tu nombre">
+    <button id="btnGuardar">Guardar Datos</button>
+    <p>Revisa la consola (F12) al hacer clic para ver el JSON generado.</p>
+
+    <script>
+        const inputNombre = document.getElementById('inputNombre');
+        const btnGuardar = document.getElementById('btnGuardar');
+
+        btnGuardar.addEventListener('click', () => {
+            const nombre = inputNombre.value.trim();
+            if (nombre) {
+                const datosUsuario = {
+                    nombre: nombre,
+                    fechaGuardado: new Date().toLocaleDateString()
+                };
+
+                const jsonDatos = JSON.stringify(datosUsuario);
+
+                console.log("Objeto guardado:", datosUsuario);
+                console.log("JSON generado:", jsonDatos);
+            } else {
+                alert("Por favor, ingresa un nombre.");
+            }
+        });
+    </script>
+</body>
+</html>

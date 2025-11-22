@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 22:</title>
+    <style>
+        #perfilGuardado { border: 1px solid #007bff; padding: 15px; background-color: #e9f5ff; }
+        #perfilGuardado h4 { color: #007bff; }
+    </style>
+</head>
+<body>
+    <h3>Simulador de Perfil (Persistencia)</h3>
+    <div id="perfilGuardado"></div>
+
+    <form id="formPerfil" style="margin-top: 20px;">
+        <input type="text" id="p_nombre" placeholder="Nombre" required>
+        <input type="number" id="p_edad" placeholder="Edad" required>
+        <input type="text" id="p_pais" placeholder="País" required>
+        <button type="submit">Guardar Perfil</button>
+    </form>
+
+    <script>
+        const STORAGE_KEY = 'perfilUsuario';
+        const form = document.getElementById('formPerfil');
+        const divPerfil = document.getElementById('perfilGuardado');
+        const inputNombre = document.getElementById('p_nombre');
+        const inputEdad = document.getElementById('p_edad');
+        const inputPais = document.getElementById('p_pais');
+
+        const mostrarPerfil = (datos) => {
+            divPerfil.innerHTML = `
+                <h4>¡Bienvenido, ${datos.nombre}!</h4>
+                <p>Edad: ${datos.edad}</p>
+                <p>País: ${datos.pais}</p>
+            `;
+            form.style.display = 'none';
+        };
+
+        const perfilJSON = localStorage.getItem(STORAGE_KEY);
+        if (perfilJSON) {
+            const perfil = JSON.parse(perfilJSON);
+            mostrarPerfil(perfil);
+            console.log("Perfil recuperado de localStorage:", perfil);
+        } else {
+            divPerfil.innerHTML = '<p>No hay perfil guardado. Por favor, completa el formulario.</p>';
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nuevoPerfil = {
+                nombre: inputNombre.value,
+                edad: inputEdad.value,
+                pais: inputPais.value,
+            };
+
+            const jsonGuardar = JSON.stringify(nuevoPerfil);
+            localStorage.setItem(STORAGE_KEY, jsonGuardar);
+            
+            alert('Perfil guardado exitosamente. Recarga la página para verlo aparecer.');
+            mostrarPerfil(nuevoPerfil);
+        });
+    </script>
+</body>
+</html>

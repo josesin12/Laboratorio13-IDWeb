@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 13:</title>
+    <style>
+        table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }
+        form input, form button { margin: 5px; padding: 8px; }
+    </style>
+</head>
+<body>
+    <h3>Gestión de Usuarios (CRUD)</h3>
+    <form id="formUsuario">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="number" id="edad" placeholder="Edad" required>
+        <button type="submit" id="btnGuardar">Añadir Usuario</button>
+    </form>
+    <hr>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Nombre</th><th>Edad</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="tablaUsuarios"></tbody>
+    </table>
+
+    <script>
+        const form = document.getElementById('formUsuario');
+        const tabla = document.getElementById('tablaUsuarios');
+        const inputNombre = document.getElementById('nombre');
+        const inputEdad = document.getElementById('edad');
+        let usuarios = [];
+        let idActual = 1;
+        let modoEdicion = false;
+        let idEditando = null;
+
+        const renderTable = () => {
+            tabla.innerHTML = '';
+            usuarios.forEach(usuario => {
+                const row = tabla.insertRow();
+                row.innerHTML = `
+                    <td>${usuario.id}</td>
+                    <td>${usuario.nombre}</td>
+                    <td>${usuario.edad}</td>
+                    <td>
+                        <button class="editar" data-id="${usuario.id}">Editar</button>
+                        <button class="eliminar" data-id="${usuario.id}">Eliminar</button>
+                    </td>
+                `;
+            });
+        };
+
+        const actualizarFormulario = (usuario) => {
+            inputNombre.value = usuario.nombre;
+            inputEdad.value = usuario.edad;
+            modoEdicion = true;
+            idEditando = usuario.id;
+            document.getElementById('btnGuardar').textContent = 'Guardar Cambios';
+        };
+
+        const eliminarUsuario = (id) => {
+            usuarios = usuarios.filter(u => u.id !== id);
+            renderTable();
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = inputNombre.value.trim();
+            const edad = inputEdad.value.trim();
+
+            if (modoEdicion) {
+                const index = usuarios.findIndex(u => u.id === idEditando);
+                if (index !== -1) {
+                    usuarios[index].nombre = nombre;
+                    usuarios[index].edad = parseInt(edad);
+                }
+                
+                modoEdicion = false;
+                idEditando = null;
+                document.getElementById('btnGuardar').textContent = 'Añadir Usuario';
+            } else {
+                usuarios.push({ id: idActual++, nombre, edad: parseInt(edad) });
+            }
+            renderTable();
+            form.reset();
+        });
+
+        tabla.addEventListener('click', (event) => {
+            const target = event.target;
+            const id = parseInt(target.dataset.id);     
+
+            if (target.classList.contains('eliminar')) {
+                eliminarUsuario(id);
+            }
+            if (target.classList.contains('editar')) {
+                const usuario = usuarios.find(u => u.id === id);
+                if (usuario) {
+                    actualizarFormulario(usuario);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

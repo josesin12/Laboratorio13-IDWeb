@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 18:</title>
+    <style>
+        table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }
+    </style>
+</head>
+<body>
+    <h3>Lista de Libros</h3>
+    <div id="contenedorLibros"></div>
+
+    <script>
+        const jsonLibros = `{
+          "libros": [
+            {"titulo": "Cien años de soledad", "autor": "García Márquez"},
+            {"titulo": "1984", "autor": "George Orwell"},
+            {"titulo": "El Principito", "autor": "Antoine de Saint-Exupéry"}
+          ]
+        }`;
+        const contenedor = document.getElementById('contenedorLibros');
+
+        const objetoLibros = JSON.parse(jsonLibros);
+
+        const tabla = document.createElement('table');
+        let html = '<thead><tr><th>Título</th><th>Autor</th></tr></thead><tbody>';
+        
+        objetoLibros.libros.forEach(libro => {
+            html += `<tr><td>${libro.titulo}</td><td>${libro.autor}</td></tr>`;
+        });
+        
+        html += '</tbody>';
+        tabla.innerHTML = html;
+        contenedor.appendChild(tabla);
+    </script>
+</body>
+</html>

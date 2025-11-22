@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9:</title>
+    <style>
+        .miniaturas img { width: 100px; height: 75px; cursor: pointer; border: 2px solid transparent; margin: 5px; }
+        .miniaturas img:hover { border-color: blue; }
+        .imagen-principal { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        .imagen-principal img { max-width: 400px; height: auto; }
+    </style>
+</head>
+<body>
+    <h3>Galería de Imágenes</h3>
+    <div class="imagen-principal">
+        <img id="imgGrande" src="https://via.placeholder.com/400x300?text=Imagen+Grande+1" alt="Imagen Principal">
+    </div>
+    <div class="miniaturas" id="miniaturas">
+        <img src="https://via.placeholder.com/100x75?text=Mini+1" data-full="https://via.placeholder.com/400x300?text=Imagen+Grande+1" alt="Miniatura 1">
+        <img src="https://via.placeholder.com/100x75?text=Mini+2" data-full="https://via.placeholder.com/400x300?text=Imagen+Grande+2" alt="Miniatura 2">
+        <img src="https://via.placeholder.com/100x75?text=Mini+3" data-full="https://via.placeholder.com/400x300?text=Imagen+Grande+3" alt="Miniatura 3">
+    </div>
+
+    <script>
+        const contenedorMiniaturas = document.getElementById('miniaturas');
+        const imgGrande = document.getElementById('imgGrande');
+
+        contenedorMiniaturas.addEventListener('click', (event) => {
+            if (event.target.tagName === 'IMG') {
+                const urlFull = event.target.getAttribute('data-full');
+                if (urlFull) {
+                    imgGrande.src = urlFull;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

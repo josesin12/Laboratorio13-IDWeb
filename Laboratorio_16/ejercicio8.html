@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8</title>
+    <style>
+        .error { color: red; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h3>Registro de Usuario</h3>
+    <form id="formularioValidar">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <div id="errorNombre" class="error"></div><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo">
+        <div id="errorCorreo" class="error"></div><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("formularioValidar");
+        const inputNombre = document.getElementById("nombre");
+        const inputCorreo = document.getElementById("correo");
+        const errorNombre = document.getElementById("errorNombre");
+        const errorCorreo = document.getElementById("errorCorreo");
+
+        function mostrarError(contenedor, mensaje) {
+            contenedor.innerHTML = "";
+            const span = document.createElement("span");
+            span.textContent = mensaje;
+            contenedor.appendChild(span);
+        }
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let esValido = true;
+            errorNombre.innerHTML = "";
+            errorCorreo.innerHTML = "";
+
+            if (inputNombre.value.trim() === "") {
+                mostrarError(errorNombre, "El nombre no puede estar vacío.");
+                esValido = false;
+            }
+
+            if (inputCorreo.value.trim() === "") {
+                mostrarError(errorCorreo, "El correo no puede estar vacío.");
+                esValido = false;
+            }
+
+            if (esValido) {
+                alert("Formulario enviado correctamente.");
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>

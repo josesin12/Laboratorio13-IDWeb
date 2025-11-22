@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 15:</title>
+</head>
+<body>
+    <h3>JSON.parse()</h3>
+    <p id="valorMostrado">Cargando valor...</p>
+    <p>Revisa la consola para ver el objeto JS resultante.</p>
+
+    <script>
+        const cadenaJSON = '{"animal": "Perro", "raza": "Labrador", "edad": 4}';
+
+        const objetoJS = JSON.parse(cadenaJSON);
+
+        document.getElementById("valorMostrado").textContent = `La raza del animal es: ${objetoJS.raza}`;
+        
+        console.log("Objeto JS resultante:", objetoJS);
+    </script>
+</body>
+</html>

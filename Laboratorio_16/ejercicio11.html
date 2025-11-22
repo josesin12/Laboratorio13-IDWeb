@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 11:</title>
+</head>
+<body>
+    <h3>Lista de Compras (Clic en un elemento para eliminarlo)</h3>
+    <ul id="listaEliminable" style="cursor: pointer;">
+        <li>Leche</li>
+        <li>Huevos</li>
+        <li>Pan</li>
+        <li>Fruta</li>
+    </ul>
+
+    <script>
+        const lista = document.getElementById("listaEliminable");
+
+        lista.addEventListener("click", (event) => {
+            if (event.target.tagName === "LI") {
+                lista.removeChild(event.target);
+            }
+        });
+    </script>
+</body>
+</html>
