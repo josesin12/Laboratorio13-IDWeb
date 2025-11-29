@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 17 - JavaScript: Excepciones y Asincronía</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+        button { margin: 5px; padding: 10px 15px; cursor: pointer; }
+        #output { 
+            background-color: #f4f4f4; 
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            margin-top: 20px; 
+            white-space: pre-wrap;
+        }
+        .section-header { margin-top: 20px; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Laboratorio 17: Excepciones y Asincronía</h1>
+
+        <div class="section-header">
+            <h2>I. Manejo de Excepciones (Ejs. 3-8)</h2>
+            <button onclick="ejecutarEjercicio3()">Ejecutar Ejercicio 3 (ReferenceError)</button>
+            <button onclick="ejecutarEjercicio4()">Ejecutar Ejercicio 4 (SyntaxError JSON)</button>
+            <button onclick="ejecutarEjercicio5()">Ejecutar Ejercicio 5 (finally)</button>
+            <button onclick="ejecutarEjercicio6()">Ejecutar Ejercicio 6 (Validar Edad - throw)</button>
+            <button onclick="ejecutarEjercicio7()">Ejecutar Ejercicio 7 (TypeError - instanceof)</button>
+            <button onclick="ejecutarEjercicio8()">Ejecutar Ejercicio 8 (Propagación de Error)</button>
+        </div>
+
+        <div class="section-header">
+            <h2>II. Asincronía con Callbacks (Ejs. 9-12)</h2>
+            <button onclick="ejecutarEjercicio9()">Ejecutar Ejercicio 9 (Callback - Mensaje)</button>
+            <button onclick="ejecutarEjercicio10()">Ejecutar Ejercicio 10 (Callback - Usuario)</button>
+            <button onclick="ejecutarEjercicio11()">Ejecutar Ejercicio 11 (Callback - División)</button>
+            <button onclick="ejecutarEjercicio12()">Ejecutar Ejercicio 12 (Callback - Lista Secuencial)</button>
+        </div>
+
+        <div class="section-header">
+            <h2>III. Asincronía con Promesas (Ejs. 13-16)</h2>
+            <button onclick="ejecutarEjercicio13()">Ejecutar Ejercicio 13 (Promesa - Mensaje)</button>
+            <button onclick="ejecutarEjercicio14()">Ejecutar Ejercicio 14 (Promesa - Usuario)</button>
+            <button onclick="ejecutarEjercicio15()">Ejecutar Ejercicio 15 (Promesa - División)</button>
+            <button onclick="ejecutarEjercicio16()">Ejecutar Ejercicio 16 (Promesa - Lista Secuencial)</button>
+        </div>
+
+        <div class="section-header">
+            <h2>IV. Asincronía con Async/Await (Ejs. 17-20)</h2>
+            <button onclick="ejecutarEjercicio17()">Ejecutar Ejercicio 17 (Async/Await - Mensaje)</button>
+            <button onclick="ejecutarEjercicio18()">Ejecutar Ejercicio 18 (Async/Await - Usuario)</button>
+            <button onclick="ejecutarEjercicio19()">Ejecutar Ejercicio 19 (Async/Await - División)</button>
+            <button onclick="ejecutarEjercicio20()">Ejecutar Ejercicio 20 (Async/Await - Lista Secuencial)</button>
+        </div>
+        
+        <div class="section-header">
+            <h2>Salida (Output)</h2>
+            <pre id="output">Los resultados aparecerán aquí...</pre>
+        </div>
+    </div>
+
+    <script src="ejercicios.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4: </title>
+</head>
+<body>
+    <button id="btnAlternar">Alternar Texto</button>
+    <p id="mensaje">Texto original</p>
+
+    <script>
+       
+        
+        const btn = document.getElementById("btnAlternar");
+        const mensaje = document.getElementById("mensaje");
+        const ORIGINAL = "Texto original";
+        const CAMBIADO = "Texto cambiado";
+
+        btn.addEventListener("click", () => {
+            if (mensaje.textContent === ORIGINAL) {
+                mensaje.textContent = CAMBIADO;
+            } else {
+                mensaje.textContent = ORIGINAL;
+            }
+        });
+    </script>
+</body>
+</html>

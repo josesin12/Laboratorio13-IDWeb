@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3:</title>
+</head>
+<body>
+    <button id="btnCambiar">Cambiar Texto</button>
+    <p id="mensaje">Texto original</p>
+
+    <script>
+       
+        
+        const btn = document.getElementById("btnCambiar");
+        const mensaje = document.getElementById("mensaje");
+
+        btn.addEventListener("click", () => {
+            mensaje.textContent = "Texto cambiado";
+        });
+    </script>
+</body>
+</html>

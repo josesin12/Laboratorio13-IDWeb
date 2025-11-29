@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7:</title>
+</head>
+<body>
+    <input type="text" id="nuevoElemento" placeholder="Nuevo elemento">
+    <button id="btnAgregar">Agregar</button>
+    <button id="btnEliminarUltimo">Borrar Último</button>
+    <h3>Lista de Tareas:</h3>
+    <ul id="lista"></ul>
+
+    <script>
+       
+        
+        const input = document.getElementById("nuevoElemento");
+        const btnAgregar = document.getElementById("btnAgregar");
+        const btnEliminar = document.getElementById("btnEliminarUltimo");
+        const lista = document.getElementById("lista");
+
+        btnAgregar.addEventListener("click", () => {
+            const texto = input.value.trim();
+            if (texto) {
+                const nuevoLi = document.createElement("li");
+                nuevoLi.textContent = texto;
+                lista.appendChild(nuevoLi); 
+                input.value = "";
+            }
+        });
+
+        btnEliminar.addEventListener("click", () => {
+            
+            const ultimo = lista.lastElementChild;
+            if (ultimo) {
+                lista.removeChild(ultimo);
+            }
+        });
+    </script>
+</body>
+</html>
