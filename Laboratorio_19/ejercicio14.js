@@ -1,7 +1,6 @@
-let listaPokemon = [];   // Aquí guardaré los 12 Pokémon
-let indice = 0;          // Para saber en qué grupo de 3 estoy
+let listaPokemon = [];  
+let indice = 0;          
 
-// Al cargar, traer los 12 Pokémon
 window.onload = function () {
 
   for (let i = 1; i <= 12; i++) {
@@ -11,7 +10,6 @@ window.onload = function () {
       .then(data => {
         listaPokemon.push(data);
 
-        // Cuando ya tenemos los 12, mostrar los primeros 3
         if (listaPokemon.length === 12) {
           mostrarPokemon();
         }
@@ -23,12 +21,12 @@ window.onload = function () {
 
 function mostrarPokemon() {
   let contenedor = document.getElementById("pokemones");
-  contenedor.innerHTML = ""; // limpiar
+  contenedor.innerHTML = "";
 
-  // Mostramos del índice actual hasta índice+2 (3 pokémon)
+
   for (let i = indice; i < indice + 3; i++) {
 
-    // Evitar que i salga del rango
+
     if (i >= 0 && i < listaPokemon.length) {
 
       let p = listaPokemon[i];

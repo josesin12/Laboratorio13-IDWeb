@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4</title>
+</head>
+<body>
+
+  <h1>Ejercicio 4</h1>
+  <p>Usando .then()</p>
+
+  <button onclick="mostrar()">Mostrar Altura y Peso de Pikachu</button>
+
+  <script>
+    function mostrar() {
+      fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+        .then(res => res.json())
+        .then(data => {
+          console.log("Altura:", data.height);
+          console.log("Peso:", data.weight);
+        })
+        .catch(err => console.log("Error:", err));
+    }
+  </script>
+  
+
+</body>
+</html>

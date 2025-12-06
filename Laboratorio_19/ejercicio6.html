@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 6</title>
+</head>
+<body>
+
+  <h1>Ejercicio 6</h1>
+
+  <button onclick="ver()">Mostrar URL del Sprite</button>
+
+  <script src="ejercicio6.js">
+    function ver() {
+      fetch("https://pokeapi.co/api/v2/pokemon/charizard")
+        .then(res => res.json())
+        .then(data => {
+          console.log("URL Sprite:", data.sprites.front_default);
+        })
+        .catch(err => console.log("Error:", err));
+    }
+  </script>
+
+</body>
+</html>
