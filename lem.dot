@@ -1,0 +1,37 @@
+graph CampusRiesgoReal {
+    // Configuracion de estilo
+    rankdir=TB; 
+    edge [fontname="Arial", fontsize=10];
+    node [shape=box, style=filled, fillcolor=lightblue, fontname="Arial"];
+
+    // Nodos clave
+    P_ORIGEN [label="1. Punto de Partida (Flecha)", shape=octagon, fillcolor=yellow];
+    I_CRUCE [label="2. Intersección Principal"];
+    F_ARQUI [label="3. Facultad de Arquitectura"];
+    E_INGEN [label="4. Escuela de Ingeniería"];
+    I_SIST [label="5. Ingeniería de Sistemas"];
+    T_CERO [label="6. Taller Cero"];
+    APARC [label="7. Aparcamiento (Destino)", shape=box, fillcolor=salmon]; 
+
+    // Aristas y Ponderaciones (Riesgo = Cantidad de focos/contaminacion)
+    P_ORIGEN -- I_CRUCE [label="1", color=green];
+    I_CRUCE -- E_INGEN [label="1", color=green];
+    I_CRUCE -- APARC [label="1", color=green];
+
+    E_INGEN -- T_CERO [label="1", color=green];
+    E_INGEN -- I_SIST [label="1", color=green];
+
+    T_CERO -- F_ARQUI [label="1", color=green];
+    T_CERO -- APARC [label="2", color=orange]; // Mas focos
+    
+    I_SIST -- T_CERO [label="2", color=orange]; // Mas focos
+    F_ARQUI -- APARC [label="1", color=green];
+
+    // Subgraph para la solución de Dijkstra
+    subgraph cluster_dijkstra {
+        label = "Camino de Mínimo Riesgo (Dijkstra)";
+        style = rounded;
+        color = blue;
+        // Los nodos de la ruta más corta irán aquí
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 14</title>
+
+  <style>
+    .contenedor {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .tarjeta {
+      border: 1px solid #aaa;
+      width: 150px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Pokémon (1 al 12) - Navegación de 3 en 3</h1>
+
+  <button onclick="anterior()">Anterior</button>
+  <button onclick="siguiente()">Siguiente</button>
+
+  <div id="pokemones" class="contenedor"></div>
+
+  <script src="ejercicio14.js"></script>
+</body>
+</html>

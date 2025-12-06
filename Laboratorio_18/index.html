@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX y DOM</title>
+    <style>
+        
+        body { font-family: sans-serif; padding: 20px; }
+        .info-card { border: 1px solid #ccc; padding: 15px; margin-top: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <h1>Cargar Usuario 2 y Pintar el DOM</h1>
+    
+    <button id="btnCargarPromesa">Cargar Usuario (¡Promesas!)</button>
+    <div id="usuarioInfoPromesa" class="info-card">
+        <p><strong>Nombre:</strong> <span id="nombreP">Esperando...</span></p>
+        <p><strong>Email:</strong> <span id="emailP">Esperando...</span></p>
+        <p><strong>Ciudad:</strong> <span id="ciudadP">Esperando...</span></p>
+    </div>
+
+    <hr>
+    
+    <button id="btnCargarAsync">Cargar Usuario (¡Async/Await Cool!)</button>
+    <div id="usuarioInfoAsync" class="info-card">
+        <p><strong>Nombre:</strong> <span id="nombreA">Esperando...</span></p>
+        <p><strong>Email:</strong> <span id="emailA">Esperando...</span></p>
+        <p><strong>Ciudad:</strong> <span id="ciudadA">Esperando...</span></p>
+    </div>
+    
+    <script src="ejercicio7.js"></script> 
+    <script src="ejercicio8.js"></script> 
+
+</body>
+</html>
