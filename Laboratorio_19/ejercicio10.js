@@ -1,14 +1,12 @@
 window.onload = function () {
   let contenedor = document.getElementById("pokemones");
 
-  // Hacemos 10 peticiones, una por cada ID
   for (let i = 1; i <= 10; i++) {
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
       .then(res => res.json())
       .then(data => {
 
-        // Crear una tarjeta por Pokémon
         let tarjeta = document.createElement("div");
         tarjeta.classList.add("tarjeta");
 

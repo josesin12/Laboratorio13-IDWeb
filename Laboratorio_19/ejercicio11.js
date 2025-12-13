@@ -5,7 +5,6 @@ function buscarTipos() {
     .then(res => res.json())
     .then(data => {
 
-      // Obtener los tipos en una lista sencilla
       let tipos = data.types.map(t => t.type.name);
 
       document.getElementById("resultado").innerHTML = `

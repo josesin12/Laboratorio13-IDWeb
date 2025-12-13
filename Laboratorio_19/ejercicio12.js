@@ -12,7 +12,6 @@ function mostrarStats() {
         <ul>
       `;
 
-      // Recorrer cada estadística
       data.stats.forEach(stat => {
         html += `<li>${stat.stat.name}: ${stat.base_stat}</li>`;
       });
