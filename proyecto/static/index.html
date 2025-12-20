@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Equipos de Futbol</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Gestion de Equipos</h1>
+    
+    <div class="caja">
+        <h3>Registrar Nuevo Equipo</h3>
+        <input type="text" id="nom" placeholder="Nombre del equipo">
+        <input type="text" id="ciu" placeholder="Ciudad">
+        <input type="number" id="atk" placeholder="Ataque (1-10)" min="1" max="10">
+        <input type="number" id="def" placeholder="Defensa (1-10)" min="1" max="10">
+        <button onclick="guardarEquipo()">Guardar Equipo</button>
+    </div>
+
+    <div class="caja">
+        <h3>Lista de Equipos</h3>
+        <button onclick="cargarEquipos()">Actualizar Lista</button>
+        <ul id="lista-equipos"></ul>
+    </div>
+</body>
+</html>

@@ -15,7 +15,7 @@ def agregar_estudiante(estudiantes):
 
 def mostrar_estudiantes(estudiantes):
     if not estudiantes:
-        print("No hay estudiantes registrados.\n")
+        print("No hay estudiantes registrados\n")
         return
 
     for e in estudiantes:
@@ -25,7 +25,7 @@ def mostrar_estudiantes(estudiantes):
 
 def mejor_promedio(estudiantes):
     if not estudiantes:
-        print("No hay estudiantes registrados.\n")
+        print("No hay estudiantes registrados\n")
         return
 
     mejor = estudiantes[0]
@@ -43,7 +43,7 @@ def buscar_por_nombre(estudiantes):
         if e["nombre"].lower() == nombre.lower():
             print(f"Nombre: {e['nombre']}, Edad: {e['edad']}, Promedio: {e['promedio']}\n")
             return
-    print("Estudiante no encontrado.\n")
+    print("Estudiante no encontrado\n")
 
 
 def eliminar_por_nombre(estudiantes):
@@ -51,9 +51,9 @@ def eliminar_por_nombre(estudiantes):
     for i, e in enumerate(estudiantes):
         if e["nombre"].lower() == nombre.lower():
             estudiantes.pop(i)
-            print("Estudiante eliminado.\n")
+            print("Estudiante eliminado\n")
             return
-    print("Estudiante no encontrado.\n")
+    print("Estudiante no encontrado\n")
 
 
 def menu():

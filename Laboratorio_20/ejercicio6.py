@@ -41,10 +41,7 @@ def normalizar(lista, modo):
     else:
         raise ValueError("Modo inválido. Usa: 'minmax', 'zscore' o 'unit'")
 
-    return resultado
-
-
-# Prueba
+    return resultadoDRXz
 valores = [10, 20, 30]
 
 print(normalizar(valores, "minmax"))
@@ -86,9 +83,6 @@ def normalizar(lista, modo):
         raise ValueError("Modo inválido. Usa: 'minmax', 'zscore' o 'unit'")
 
     return resultado.tolist()
-
-
-# Prueba
 valores = [10, 20, 30]
 
 print(normalizar(valores, "minmax"))
